@@ -1,0 +1,19 @@
+{
+    "main": {
+      "name": {
+          "first": "Simon",
+          "last": "Islam"
+      },
+      "logo": true,
+      "titles": [
+          "Full Stack Developer",
+          "Competitive Programmer"
+      ],
+      "headings": {
+        "about": "About",
+        "skills": "Skills",
+        "portfolio": "Portfolio",
+        "contact": "Contact"
+      }
+    } 
+}

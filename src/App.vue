@@ -1,28 +1,48 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <transition name="fade" tag="div" class="wrapper" mode="out-in">
+    <div class="wrapper" id="app">
+      <LandingPage />
+      <!-- <Description :user="user" :content="findSlug('description')" :links="findSlug('links')" />
+      <Experience :content="findSlug('experiences')" />
+      <Skills :content="findSlug('skills')" />
+      <Projects :content="findSlug('projects')" />
+      <Footer :user="user" :links="findSlug('links')" /> -->
+    </div>
+  </transition>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import LandingPage from "./components/LandingPage.vue";
+// import Description from "./components/Description.vue";
+// import Experience from "./components/Experience.vue";
+// import Skills from "./components/Skills.vue";
+// import Projects from "./components/Projects.vue";
+// import Footer from "./components/Footer.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    LandingPage,
+    // Description,
+    // Experience,
+    // Skills,
+    // Projects,
+    // Footer,
+  },
+};
 </script>
 
-<style>
+<style scoped lang="scss">
+@import "@/styles/constants.scss";
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Montserrat-Regular, serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+.wrapper {
+  height: 100%;
 }
 </style>
