@@ -17,7 +17,29 @@
       }
     },
     "description": {
-      "title": "A human. Being.",
-      "description": "I am a full stack developer currently working in Intercloud Ltd., Bangladesh as a software engineer. I have a Bachelor's Degree in Computer Science and Engineering from Chittagond University and Technology. In my university years, I have participated in various competitive programming contests. CS is not only my professional background but also and above all has been a passion for myself. In Intercloud Ltd., I work as a software engineer in their cloud system department. My work here includes building and integrating various features for their public cloud system."
-    } 
+      "title": "About me",
+      "description": "A Human. Being."
+    },
+    "image": "user.jpg",
+    "summary": {
+      "title": "A Brief Info about Myself",
+      "para_1": "I am a full stack developer currently working in Intercloud Ltd., Bangladesh as a software engineer. I have a Bachelor's Degree in Computer Science and Engineering from Chittagond University and Technology. In my university years, I have participated in various competitive programming contests. CS is not only my professional background but also and above all has been a passion for myself.",
+      "para_2": "At Intercloud Ltd., I work as a software engineer in their cloud system department. My work here includes building and integrating various features for their public cloud system. I have been involved in developing their simple storage service and the payment system."
+    },
+    "contact": {
+      "name": "Simon Islam",
+      "email": "simon.islam.rian@gmail.com",
+      "phone": "+8801991725504",
+      "city": "Dhaka",
+      "languages": "Bengali, English."
+    },
+    "links": {
+      "facebook": "https://www.facebook.com/rn7426/",
+      "twitter": "https://twitter.com/SimonIslam7426",
+      "linkedin": "https://www.linkedin.com/in/simon-islam-rian/",
+      "reddit": "https://www.reddit.com/user/Rainmaker7426",
+      "github": "https://github.com/simon7426",
+      "codeforces": "https://codeforces.com/profile/Simon7426",
+      "gitlab": "https://gitlab.com/simon.islam"
+    }
 }

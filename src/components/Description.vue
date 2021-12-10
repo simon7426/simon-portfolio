@@ -1,21 +1,21 @@
 <template>
     <section id="about">
         <AnimateOnVisible name="fadeDown" :duration="1">
-            <Title :title="title" :description="content.metadata.description" />
+            <Title :title="title" :description="description" />
         </AnimateOnVisible>
 
         <AnimateOnVisible name="fadeRight" :duration="1">
             <div class="section-content">
                 <div class="container-fluid">
                     <div class="row justify-content-center">
-                        <Photo :user="user"/>
+                        <Photo :user_image="image"/>
                     </div>
                     <div class="row">
                         <div class="col-md-7 mr-auto card-mobile">
-                            <Presentation :content="content"/>
+                            <Presentation :summary="summary"/>
                         </div>
                         <div class="col-md-4 card-mobile">
-                            <PersonnalCard :user="user" :links="links"/>
+                            <PersonnalCard :contact="contact" :links="links"/>
                         </div>
                     </div>
                 </div>
@@ -25,6 +25,7 @@
 </template>
 
 <script>
+    import data from "../data/data.json";
     import Title from './Title.vue'
     import PersonnalCard from './PersonnalCard.vue'
     import Presentation from './Presentation.vue'
@@ -35,8 +36,12 @@
         props: {},
         data() {
             return {
-                title: "A human. Being.",
-                description: "Hello world."
+                title: data.description.title,
+                description: data.description.description,
+                image: data.image,
+                summary: data.summary,
+                contact: data.contact,
+                links: data.links
             };
         },
         components: {

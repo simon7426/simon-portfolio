@@ -1,15 +1,15 @@
 <template>
   <div class="paragraph">
-    <h3>{{content.metadata.pres_title}}</h3>
-    <div class="begin">{{content.metadata.pres_first}}</div>
-    <p>{{content.metadata.pres_second}}</p>
+    <h3>{{summary.title}}</h3>
+    <div class="begin">{{summary.para_1}}</div>
+    <p>{{summary.para_2}}</p>
   </div>
 </template>
 
 <script>
 export default {
     name: 'Description',
-    props: ['content']
+    props: ['summary']
 }
 </script>
 

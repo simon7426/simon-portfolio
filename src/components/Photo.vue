@@ -2,7 +2,7 @@
   <div>
     <div class="photo">
         <a>
-            <img :src="getImgUrl(user.photo)" alt="photo"/>
+            <img :src="getImgUrl(user_image)" alt="photo"/>
         </a>
     </div>
   </div>
@@ -11,7 +11,7 @@
 <script>
 export default {
     name: 'Photo',
-    props: ['user'],
+    props: ['user_image'],
     methods: {
         getImgUrl(img) {
             return require('../assets/img/'+img);
