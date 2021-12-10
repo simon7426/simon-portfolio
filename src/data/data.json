@@ -15,5 +15,9 @@
         "portfolio": "Portfolio",
         "contact": "Contact"
       }
+    },
+    "description": {
+      "title": "A human. Being.",
+      "description": "I am a full stack developer currently working in Intercloud Ltd., Bangladesh as a software engineer. I have a Bachelor's Degree in Computer Science and Engineering from Chittagond University and Technology. In my university years, I have participated in various competitive programming contests. CS is not only my professional background but also and above all has been a passion for myself. In Intercloud Ltd., I work as a software engineer in their cloud system department. My work here includes building and integrating various features for their public cloud system."
     } 
 }

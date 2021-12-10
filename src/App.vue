@@ -2,18 +2,18 @@
   <transition name="fade" tag="div" class="wrapper" mode="out-in">
     <div class="wrapper" id="app">
       <LandingPage />
-      <!-- <Description :user="user" :content="findSlug('description')" :links="findSlug('links')" />
-      <Experience :content="findSlug('experiences')" />
-      <Skills :content="findSlug('skills')" />
-      <Projects :content="findSlug('projects')" />
-      <Footer :user="user" :links="findSlug('links')" /> -->
+      <Description />
+      <!-- <Experience :content="findSlug('experiences')" /> -->
+      <!-- <Skills :content="findSlug('skills')" /> -->
+      <!-- <Projects :content="findSlug('projects')" /> -->
+      <!-- <Footer :user="user" :links="findSlug('links')" /> -->
     </div>
   </transition>
 </template>
 
 <script>
 import LandingPage from "./components/LandingPage.vue";
-// import Description from "./components/Description.vue";
+import Description from "./components/Description.vue";
 // import Experience from "./components/Experience.vue";
 // import Skills from "./components/Skills.vue";
 // import Projects from "./components/Projects.vue";
@@ -23,7 +23,7 @@ export default {
   name: "App",
   components: {
     LandingPage,
-    // Description,
+    Description,
     // Experience,
     // Skills,
     // Projects,
