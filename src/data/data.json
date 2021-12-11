@@ -41,5 +41,35 @@
       "github": "https://github.com/simon7426",
       "codeforces": "https://codeforces.com/profile/Simon7426",
       "gitlab": "https://gitlab.com/simon.islam"
+    },
+    "experience": {
+      "title": {
+        "title": "Experience",
+        "description": "Academic & Professional"
+      },
+      "academic": [
+        {
+          "title": "Bachelor of Science - BSc in Computer Science & Engineering",
+          "content": "Chittagong University of Engineering & Technology, Chattogram",
+          "year": "2016-2022"
+        },
+        {
+          "title": "Higher Secondary Certificate (HSC)",
+          "content": "Notre Dame College, Dhaka",
+          "year": "2013-2015"
+        },
+        {
+          "title": "Secondary School Exam (SSC)",
+          "content": "Kishoreganj Govt. Boys' High School, Kishoreganj",
+          "year": "2008-2013"
+        }
+      ],
+      "professional": [
+        {
+          "title": "Software Engineer - Cloud System",
+          "content": "Intercloud Limited, Bangladesh",
+          "year": "June 2021 - "
+        }
+      ]
     }
 }
