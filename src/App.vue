@@ -5,7 +5,8 @@
       <Description />
       <Experience />
       <Skills />
-      <!-- <Projects :content="findSlug('projects')" /> -->
+      <Projects />
+      <problem-solving />
       <!-- <Footer :user="user" :links="findSlug('links')" /> -->
     </div>
   </transition>
@@ -16,7 +17,8 @@ import LandingPage from "./components/LandingPage.vue";
 import Description from "./components/Description.vue";
 import Experience from "./components/Experience.vue";
 import Skills from "./components/Skills.vue";
-// import Projects from "./components/Projects.vue";
+import Projects from "./components/Projects.vue";
+import ProblemSolving from "./components/ProblemSolving.vue"
 // import Footer from "./components/Footer.vue";
 
 export default {
@@ -26,7 +28,8 @@ export default {
     Description,
     Experience,
     Skills,
-    // Projects,
+    Projects,
+    ProblemSolving,
     // Footer,
   },
 };

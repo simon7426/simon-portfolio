@@ -20,7 +20,7 @@
         name: 'SkillsPage',
         components: {
         },
-        props: ['skills', 'key'],
+        props: ['skills'],
         methods: {
             getImgUrl(img) {
                 return require('../assets/img/logo/'+img);

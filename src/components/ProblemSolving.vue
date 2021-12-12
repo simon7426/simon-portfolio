@@ -11,49 +11,46 @@
           data-aos-duration="1000"
         >
           <li
-            v-for="item in skills"
-            :key="item.category"
+            v-for="item in sites"
+            :key="item.name"
             class="list-inline-item filter"
           >
             <a
               class="nav-item"
-              :class="item.category === currentCategory ? 'active' : null"
-              :data-category="item.category"
-              @click="setCategory"
-              >{{ item.category }}</a
+              :class="item.name === currentSite ? 'active' : null"
+              :data-category="item.name"
+              @click="setName"
+              >{{ item.name }}</a
             >
           </li>
         </ul>
       </div>
-      <SkillsPage :skills="filteredSkills" />
+
     </div>
   </section>
 </template>
 
 <script>
 import data from "../data/data.json";
-import SkillsPage from "../components/SkillsPage.vue"
 
 export default {
-  name: "Skills",
+  name: "ProblemSolving",
   props: {},
   components: {
-    // Arrow,
-    SkillsPage
   },
   data() {
     return {
-      skills: data.skills.categories,
-      heading: data.skills.title,
-      currentCategory: data.skills.defaultCategory,
+      sites: data.problemSolving.sites,
+      heading: data.problemSolving.heading,
+      currentSite: data.problemSolving.currentSite,
     };
   },
   computed: {
     filteredSkills() {
-      var skills = data.skills.categories;
-      var category = this.currentCategory;
-      var filtered = skills.filter(function(x) {
-        if (x.category === category) {
+      var sites = data.problemSolving.sites;
+      var currentSite = this.currentSite;
+      var filtered = sites.filter(function(x) {
+        if (x.name === currentSite) {
           return x;
         }
       });
@@ -64,8 +61,9 @@ export default {
     },
   },
   methods: {
-    setCategory(event) {
-      this.currentCategory = event.target.dataset.category;
+    setName(event) {
+      console.log(event);
+      this.currentSite = event.target.dataset.category;
     },
   },
 };

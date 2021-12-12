@@ -158,5 +158,48 @@
           ]
         }
       ]
+    },
+    "projects": {
+      "title": "Projects & Researchs",
+      "description": "Highlight of some of my works",
+      "projectList": [
+        {
+          "title": "Multi-label Emotion Classification of Tweets Using Machine Learning",
+          "content": "Multi label emotion classification is the process of classify a text into various emotions that it represents. In this work, we performed multi label emotion classification of tweets using various advance multi label classification methods. 8 emotion classes and 13 different multi label classification methods were used in this work.<br><br>Springer Link: <a href='https://link.springer.com/chapter/10.1007/978-981-16-6636-0_53'>https://link.springer.com/chapter/10.1007/978-981-16-6636-0_53</a>",
+          "image": "multilabel.png",
+          "color": "green",
+          "category": "Research",
+          "date": "2021-12-4",
+          "icon": "receipt"
+        },
+        {
+          "title": "Simple Storage Service for Brilliant Cloud Platform",
+          "content": "An object storage service designed for Brilliant Cloud Platform. It acts and works like aws s3. It has it's own s3 compatible APIs. Customers of all sizes and industries can store and protect any amount of data for virtually any use case, such as data lakes, cloud-native applications, and mobile apps. The customer has the option to share the stored objects over the internet.<br><br>Brilliant Portal Link: <a href='https://bcp.brilliant.com.bd/'>https://bcp.brilliant.com.bd/</a>",
+          "image": "s3.gif",
+          "color": "black",
+          "date": "2021-10-31",
+          "category": "Service"
+        },
+        {
+          "title": "E-commerce Marketplace with Hybrid Recommendation System",
+          "content": "A Hybrid Recommendation System was developed using both collaborative and content-based filtering system. It was then deployed as part of an E-commerce website where a user can create accounts, browse products, buy and sell products. The Recommendation system was developed using Python and the E-commerce website was designed using Python’s Django Framework.<br><br>Github: <a href='https://github.com/simon7426/ecom-project'>https://github.com/simon7426/ecom-project</a>",
+          "image": "ecom.png",
+          "color": "blue",
+          "category": "Website",
+          "date": "2019-11-17"
+        }
+      ]
+    },
+    "problemSolving": {
+      "heading": "Problem Solving Statistics",
+      "currentSite": "Codeforces",
+      "sites": [
+        {
+          "name": "Codeforces"
+        },
+        {
+          "name": "Leetcode"
+        }
+      ]
     }
 }
