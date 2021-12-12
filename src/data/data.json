@@ -71,5 +71,92 @@
           "year": "June 2021 - "
         }
       ]
+    },
+    "skills": {
+      "title": "Skills",
+      "defaultCategory": "Languages",
+      "categories": [
+        {
+          "category": "Languages",        
+          "skillList":[
+            {
+              "name": "Python",
+              "img": "python.png"
+            },
+            {
+              "name": "C++",
+              "img": "cplusplus.png"
+            },
+            {
+              "name": "C",
+              "img": "C.png"
+            },
+            {
+              "name": "Javascript",
+              "img": "javascript.png"
+            },
+            {
+              "name": "CSS",
+              "img": "css.png"
+            },
+            {
+              "name": "HTML",
+              "img": "html.png"
+            }
+          ]
+        },
+        
+        {
+          "category": "Frameworks",     
+          "skillList": [
+            {
+              "name": "Django",
+              "img": "django.png"
+            },
+            {
+              "name": "Flask",
+              "img": "flask.png"
+            },
+            {
+              "name": "Fase API",
+              "img": "fastapi.png"
+            },
+            {
+              "name": "Vue",
+              "img": "vuejs.png"
+            }
+          ]
+        },
+
+        {
+          "category": "Technologies",
+          "skillList": [
+            {
+              "name": "Docker",
+              "img": "docker.png"
+            },
+            {
+              "name": "Kubernetes",
+              "img": "kubernetes.png"
+            },
+            {
+              "name": "Git",
+              "img": "git.png"
+            },
+            {
+              "name": "Postgresql",
+              "img": "postgresql.png"
+            },
+            {
+              "name": "Mysql",
+              "img": "mysql.png"
+            },
+            {
+              "name": "Linux",
+              "img": "linux.png"
+            }
+          ]
+        }
+      ]
     }
 }

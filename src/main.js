@@ -14,6 +14,8 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { faCopyright} from '@fortawesome/free-solid-svg-icons'
 import { faFacebookSquare, faLinkedin, faGithubSquare, faGitlab, faTwitterSquare, faRedditSquare } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 library.add(faCopyright, faFacebookSquare, faLinkedin, faGithubSquare, faGitlab, faTwitterSquare, faRedditSquare)
 
@@ -23,6 +25,9 @@ Vue.config.productionTip = false
 
 new Vue({
   render: h => h(App),
+  mounted() {
+    AOS.init()
+  },
 }).$mount('#app')
 
 import 'bootstrap/dist/css/bootstrap.css'

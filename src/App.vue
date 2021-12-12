@@ -4,7 +4,7 @@
       <LandingPage />
       <Description />
       <Experience />
-      <!-- <Skills :content="findSlug('skills')" /> -->
+      <Skills />
       <!-- <Projects :content="findSlug('projects')" /> -->
       <!-- <Footer :user="user" :links="findSlug('links')" /> -->
     </div>
@@ -15,7 +15,7 @@
 import LandingPage from "./components/LandingPage.vue";
 import Description from "./components/Description.vue";
 import Experience from "./components/Experience.vue";
-// import Skills from "./components/Skills.vue";
+import Skills from "./components/Skills.vue";
 // import Projects from "./components/Projects.vue";
 // import Footer from "./components/Footer.vue";
 
@@ -25,7 +25,7 @@ export default {
     LandingPage,
     Description,
     Experience,
-    // Skills,
+    Skills,
     // Projects,
     // Footer,
   },
