@@ -2,10 +2,10 @@
     <section id="Codeforces">
         <AnimateOnVisible name="fadeRight" >
             <div id="codeforces">
-                <div class="card mb-3" style="max-width: 720px;">
+                <div class="card mb-3" style="max-width: 720px; height: 250px;">
                     <div class="row no-gutters">
                         <div class="col-md-4 center">
-                        <img src="../assets/img/logo/codeforces.png" class="card-img" alt="Codeforces">
+                            <a :href="profileLink"><img src="../assets/img/logo/codeforces.png" class="card-img" alt="Codeforces"></a>
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
@@ -35,7 +35,8 @@ export default {
             maxRating: 0,
             maxRank: "",
             solveCnt: 0,
-            status: []
+            status: [],
+            profileLink: "https://codeforces.com/profile/"+this.handle,
         }
     },
     methods: {
@@ -56,20 +57,20 @@ export default {
         }
 
         const info_url = 'https://codeforces.com/api/user.info?handles=' + this.handle;
-        // const status_url = 'https://codeforces.com/api/user.status?handle=' + this.handle;
+        const status_url = 'https://codeforces.com/api/user.status?handle=' + this.handle;
         const resp_info = await axios.get(info_url,config)
         const info = resp_info.data.result[0]
         this.maxRating = info['maxRating']
         this.maxRank = info['maxRank']
-        // const resp_status = await axios.get(status_url, config)
-        // const status = resp_status.data.result
-        // this.status = status.filter((x)=> {
-        //     if (x.verdict === 'OK'){
-        //         return x
-        //     }
-        // })
-        // this.solveCnt = this.status.length
-        // this.status = this.status.slice(0,11)
+        const resp_status = await axios.get(status_url, config)
+        const status = resp_status.data.result
+        this.status = status.filter((x)=> {
+            if (x.verdict === 'OK'){
+                return x
+            }
+        })
+        this.solveCnt = this.status.length
+        this.status = this.status.slice(0,11)
     }
 }
 </script>

@@ -1,8 +1,7 @@
 <template>
   <section id="skills" class="light-section">
     <div class="container-fluid">
-      <h1 class="section-header">{{ heading }}</h1>
-
+      <Title class="title" :title="heading" :description="description" />
       <!-- start of filters  -->
       <div class="row filters">
         <ul
@@ -33,18 +32,21 @@
 <script>
 import data from "../data/data.json";
 import SkillsPage from "../components/SkillsPage.vue"
+import Title from "../components/Title.vue"
 
 export default {
   name: "Skills",
   props: {},
   components: {
     // Arrow,
-    SkillsPage
+    SkillsPage,
+    Title
   },
   data() {
     return {
       skills: data.skills.categories,
       heading: data.skills.title,
+      description: data.skills.description,
       currentCategory: data.skills.defaultCategory,
     };
   },

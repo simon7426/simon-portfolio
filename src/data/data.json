@@ -74,6 +74,7 @@
     },
     "skills": {
       "title": "Skills",
+      "description": "Various skills I am proficient in",
       "defaultCategory": "Languages",
       "categories": [
         {
@@ -192,6 +193,7 @@
     },
     "problemSolving": {
       "heading": "Problem Solving Statistics",
+      "description": "My performance in problem solving sites.",
       "currentSite": "Codeforces",
       "currentHandle": "simon7426",
       "sites": [
@@ -202,6 +204,7 @@
         },
         {
           "name": "Leetcode",
+          "component": "Leetcode",
           "handle": "simon7426"
         }
       ]

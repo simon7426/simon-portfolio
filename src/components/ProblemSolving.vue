@@ -1,30 +1,7 @@
 <template>
   <section id="skills" class="light-section">
     <div class="container-fluid">
-      <h1 class="section-header">{{ heading }}</h1>
-
-      <!-- start of filters  -->
-      <!-- <div class="row filters">
-        <ul
-          class="list-inline mx-auto"
-          data-aos="fade-right"
-          data-aos-duration="1000"
-        >
-          <li
-            v-for="item in sites"
-            :key="item.name"
-            class="list-inline-item filter"
-          >
-            <a
-              class="nav-item"
-              :class="item.name === currentSite ? 'active' : null"
-              :data-category="item.name"
-              @click="setName"
-              >{{ item.name }}</a
-            >
-          </li>
-        </ul>
-      </div> -->
+      <Title class="title" :title="heading" :description="description" />
       <ul v-for="(site,index) in sites" :key="index">
         <li>
           <component :is="site.component" :handle="site.handle" />
@@ -37,17 +14,22 @@
 <script>
 import data from "../data/data.json";
 import Codeforces from "../components/Codeforces.vue"
+import Leetcode from "../components/Leetcode.vue"
+import Title from "../components/Title.vue"
 
 export default {
   name: "ProblemSolving",
   props: {},
   components: {
-    Codeforces
+    Codeforces,
+    Leetcode,
+    Title
   },
   data() {
     return {
       sites: data.problemSolving.sites,
       heading: data.problemSolving.heading,
+      description: data.problemSolving.description,
       currentSite: data.problemSolving.currentSite,
       currentHandle: data.problemSolving.currentHandle,
     };
