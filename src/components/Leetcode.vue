@@ -2,7 +2,7 @@
     <section id="Leetcode">
         <AnimateOnVisible name="fadeRight" >
             <div id="leetcode">
-                <div class="card mb-3" style="max-width: 720px; height: 250px;">
+                <div class="card mb-3" style="max-width: 720px;">
                     <div class="row no-gutters">
                         <div class="col-md-4 center">
                         <a :href="profileLink"><img src="../assets/img/logo/Leetcode.png" class="card-img" alt="Leetcode"></a>
@@ -11,10 +11,34 @@
                             <div class="card-body">
                                 <h5 class="card-title card-main-title">{{ handle }}</h5>
                                 <hr />
-                                <p class="card-text">Total Solve: {{ totalSolve }}</p>
-                                <p class="card-text easy">Easy: {{ easySolve }}</p>
-                                <p class="card-text medium">Medium: {{ midSolve }}</p>
-                                <p class="card-text hard">Hard: {{ hardSolve }}</p>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-sm codeforces-box">
+                                            <p class="card-top-text">
+                                                <number ref="easySolveAnimation" :to="easySolve" :duration=1 />
+                                            </p>
+                                            <span class="card-bottom">
+                                                <p class="card-bottom-text easy">Easy</p>
+                                            </span>
+                                        </div>
+                                        <div class="col-sm codeforces-box">
+                                            <p class="card-top-text">
+                                                <number ref="mediumSolveAnimation" :to="midSolve" :duration=1 />
+                                            </p>
+                                            <span class="card-bottom">
+                                                <p class="card-bottom-text medium">Medium</p>
+                                            </span>
+                                        </div>
+                                        <div class="col-sm codeforces-box">
+                                            <p class="card-top-text">
+                                                <number ref="hardSolveAnimation" :to="hardSolve" :duration=1 />
+                                            </p>
+                                            <span class="card-bottom">
+                                                <p class="card-bottom-text hard">Hard</p>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -57,6 +81,9 @@ export default {
         this.easySolve = data['Easy']['count']
         this.midSolve = data['Medium']['count']
         this.hardSolve = data['Hard']['count']
+        this.$refs.easySolveAnimation.play();
+        this.$refs.mediumSolveAnimation.play();
+        this.$refs.hardSolveAnimation.play();
     }
 }
 </script>
@@ -69,6 +96,7 @@ export default {
         margin: 0 auto; /* Added */
         float: none; /* Added */
         margin-bottom: 10px; /* Added */
+        border-radius: 16px;
 }
 .card-main-title {
     font-size: 2rem;
@@ -81,8 +109,8 @@ export default {
 
 .card-img{
     margin: 0 auto; /* Added */
+    padding: 2rem;
     float: none; /* Added */
-    margin-bottom: 10px; /* Added */
 }
 img {
     max-width: 100%;
@@ -98,9 +126,27 @@ img {
     color: green;
 }
 .medium {
-    color: gold;
+    color: rgb(251, 140, 0);
 }
 .hard {
     color: red;
+}
+
+.codeforces-box {
+    margin: 1rem 1rem;
+    border: 1px solid #ccc;
+    padding: 2.5rem 1rem;
+    border-radius: 16px;
+    height: 15rem;
+}
+.card-bottom-text {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+.card-top-text {
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 500;
 }
 </style>

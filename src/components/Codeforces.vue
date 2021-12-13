@@ -2,7 +2,7 @@
     <section id="Codeforces">
         <AnimateOnVisible name="fadeRight" >
             <div id="codeforces">
-                <div class="card mb-3" style="max-width: 720px; height: 250px;">
+                <div class="card mb-3" style="max-width: 720px;">
                     <div class="row no-gutters">
                         <div class="col-md-4 center">
                             <a :href="profileLink"><img src="../assets/img/logo/codeforces.png" class="card-img" alt="Codeforces"></a>
@@ -12,8 +12,36 @@
                                 <h5 class="card-title card-main-title">{{ handle }}</h5>
                                 <h6 class="card-title card-subtitle">{{ maxRank }}</h6>
                                 <hr />
-                                <p class="card-text">Max Rating: {{ maxRating }}</p>
-                                <p class="card-text">Total Solved: {{ solveCnt }}</p>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-sm codeforces-box">
+                                            <p class="card-top-text">
+                                                <number ref="maxRatingAnimation" :to="maxRating" :duration=1 />
+                                            </p>
+                                            <span class="card-bottom">
+                                                <p class="card-bottom-text">Max Ratings</p>
+                                            </span>
+                                        </div>
+                                        <div class="col-sm codeforces-box">
+                                            <p class="card-top-text">
+                                                <number ref="solveAnimation" :to="solveCnt" :duration=1 />
+                                            </p>
+                                            <span class="card-bottom">
+                                                <p class="card-bottom-text">Solved</p>
+                                            </span>
+                                        </div>
+                                        <div class="col-sm codeforces-box">
+                                            <p class="card-top-text">
+                                                <number ref="contributionAnimation" :to="contributions" :duration=1 />
+                                            </p>
+                                            <span class="card-bottom">
+                                                <p class="card-bottom-text">
+                                                    Contributions
+                                                </p>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -37,6 +65,7 @@ export default {
             solveCnt: 0,
             status: [],
             profileLink: "https://codeforces.com/profile/"+this.handle,
+            contributions: 0,
         }
     },
     methods: {
@@ -71,6 +100,9 @@ export default {
         })
         this.solveCnt = this.status.length
         this.status = this.status.slice(0,11)
+        this.$refs.maxRatingAnimation.play();
+        this.$refs.solveAnimation.play();
+        this.$refs.contributionAnimation.play();
     }
 }
 </script>
@@ -83,6 +115,7 @@ export default {
         margin: 0 auto; /* Added */
         float: none; /* Added */
         margin-bottom: 10px; /* Added */
+        border-radius: 16px;
 }
 .card-main-title {
     font-size: 2rem;
@@ -95,8 +128,8 @@ export default {
 
 .card-img{
         margin: 0 auto; /* Added */
+        padding: 2rem;
         float: none; /* Added */
-        margin-bottom: 10px; /* Added */
 }
 img {
     max-width: 100%;
@@ -107,5 +140,22 @@ img {
   margin-left: auto;
   margin-right: auto;
   width: 50%;
+}
+.codeforces-box {
+    margin: 1rem 1rem;
+    border: 1px solid #ccc;
+    padding: 2.5rem 1rem;
+    border-radius: 16px;
+    height: 15rem;
+}
+.card-bottom-text {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+.card-top-text {
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 500;
 }
 </style>

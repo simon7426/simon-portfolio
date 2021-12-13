@@ -7,7 +7,7 @@
       <Skills />
       <Projects />
       <problem-solving />
-      <!-- <Footer :user="user" :links="findSlug('links')" /> -->
+      <Footer />
     </div>
   </transition>
 </template>
@@ -19,7 +19,7 @@ import Experience from "./components/Experience.vue";
 import Skills from "./components/Skills.vue";
 import Projects from "./components/Projects.vue";
 import ProblemSolving from "./components/ProblemSolving.vue"
-// import Footer from "./components/Footer.vue";
+import Footer from "./components/Footer.vue";
 
 export default {
   name: "App",
@@ -30,7 +30,7 @@ export default {
     Skills,
     Projects,
     ProblemSolving,
-    // Footer,
+    Footer,
   },
 };
 </script>

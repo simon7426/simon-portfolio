@@ -17,6 +17,10 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
+import VueNumber from 'vue-number-animation'
+
+Vue.use(VueNumber)
+
 library.add(faCopyright, faFacebookSquare, faLinkedin, faGithubSquare, faGitlab, faTwitterSquare, faRedditSquare)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
