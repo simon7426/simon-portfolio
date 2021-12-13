@@ -58,7 +58,7 @@ export default {
         }
       });
 
-      console.log(filtered);
+      // console.log(filtered);
 
       return filtered;
     },

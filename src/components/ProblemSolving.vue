@@ -4,7 +4,7 @@
       <h1 class="section-header">{{ heading }}</h1>
 
       <!-- start of filters  -->
-      <div class="row filters">
+      <!-- <div class="row filters">
         <ul
           class="list-inline mx-auto"
           data-aos="fade-right"
@@ -24,25 +24,32 @@
             >
           </li>
         </ul>
-      </div>
-
+      </div> -->
+      <ul v-for="(site,index) in sites" :key="index">
+        <li>
+          <component :is="site.component" :handle="site.handle" />
+        </li>
+      </ul>
     </div>
   </section>
 </template>
 
 <script>
 import data from "../data/data.json";
+import Codeforces from "../components/Codeforces.vue"
 
 export default {
   name: "ProblemSolving",
   props: {},
   components: {
+    Codeforces
   },
   data() {
     return {
       sites: data.problemSolving.sites,
       heading: data.problemSolving.heading,
       currentSite: data.problemSolving.currentSite,
+      currentHandle: data.problemSolving.currentHandle,
     };
   },
   computed: {
@@ -55,14 +62,25 @@ export default {
         }
       });
 
-      console.log(filtered);
-
+      // console.log(filtered);
       return filtered;
     },
+    filteredHandle() {
+      var sites = data.problemSolving.sites;
+      var currentSite = this.currentSite;
+      var filtered = sites.filter(function(x) {
+        if (x.name === currentSite) {
+          return x;
+        }
+      });
+
+      // console.log(filtered);
+      return filtered[0].handle;
+    }
   },
   methods: {
     setName(event) {
-      console.log(event);
+      // console.log(event);
       this.currentSite = event.target.dataset.category;
     },
   },

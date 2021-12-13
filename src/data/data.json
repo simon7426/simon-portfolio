@@ -193,12 +193,16 @@
     "problemSolving": {
       "heading": "Problem Solving Statistics",
       "currentSite": "Codeforces",
+      "currentHandle": "simon7426",
       "sites": [
         {
-          "name": "Codeforces"
+          "name": "Codeforces",
+          "component": "Codeforces",
+          "handle": "simon7426"
         },
         {
-          "name": "Leetcode"
+          "name": "Leetcode",
+          "handle": "simon7426"
         }
       ]
     }
