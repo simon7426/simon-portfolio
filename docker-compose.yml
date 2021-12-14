@@ -1,8 +1,7 @@
-version: '3.8'
-
 services:
   web:
-    image: simon7426/vue-portfolio:0.2.1
+    image: simon7426/vue-portfolio:0.3
+    restart: always
     ports:
       - 80:80
       - 443:443
@@ -13,5 +12,6 @@ services:
       - leetcode-api
   leetcode-api:
     image: simon7426/vue-portfolio-leetcode:0.2
+    restart: always
     ports:
       - 8000:8000
