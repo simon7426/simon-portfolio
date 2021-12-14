@@ -15,7 +15,7 @@ module.exports = {
         gzip: {
           filename: '[file].gz[query]',
           algorithm: 'gzip',
-          include: /\.(js|css|html|svg|json)(\?.*)?$/i,
+          include: /\.(js|css|html|svg|json|png|gif)(\?.*)?$/i,
           minRatio: 0.8,
         }
       }

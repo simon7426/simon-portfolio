@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    image: simon7426/vue-portfolio:0.2
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./Certs:/usr/share/nginx/
+    depends_on:
+      - db
+  leetcode-api:
+    image: simon7426/vue-portfolio-leetcode:0.2
