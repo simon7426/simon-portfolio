@@ -2,14 +2,16 @@ version: '3.8'
 
 services:
   web:
-    build: .
-    image: simon7426/vue-portfolio:0.2
+    image: simon7426/vue-portfolio:0.2.1
     ports:
       - 80:80
       - 443:443
     volumes:
-      - ./Certs:/usr/share/nginx/
+      - /home/ubuntu/simon-portfolio/Certs/simonislam.com.crt:/usr/share/nginx/simonislam.com.crt
+      - /home/ubuntu/simon-portfolio/Certs/simonislam.com.key:/usr/share/nginx/simonislam.com.key
     depends_on:
-      - db
+      - leetcode-api
   leetcode-api:
     image: simon7426/vue-portfolio-leetcode:0.2
+    ports:
+      - 8000:8000

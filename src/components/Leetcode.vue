@@ -14,25 +14,28 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-sm codeforces-box">
-                                            <p class="card-top-text">
+                                            <p v-if="easySolve" class="card-top-text">
                                                 <number ref="easySolveAnimation" :to="easySolve" :duration=1 />
                                             </p>
+                                            <p v-else class="card-top-text">0</p>
                                             <span class="card-bottom">
                                                 <p class="card-bottom-text easy">Easy</p>
                                             </span>
                                         </div>
                                         <div class="col-sm codeforces-box">
-                                            <p class="card-top-text">
+                                            <p v-if="midSolve" class="card-top-text">
                                                 <number ref="mediumSolveAnimation" :to="midSolve" :duration=1 />
                                             </p>
+                                            <p v-else class="card-top-text">0</p>
                                             <span class="card-bottom">
                                                 <p class="card-bottom-text medium">Medium</p>
                                             </span>
                                         </div>
                                         <div class="col-sm codeforces-box">
-                                            <p class="card-top-text">
+                                            <p v-if="hardSolve" class="card-top-text">
                                                 <number ref="hardSolveAnimation" :to="hardSolve" :duration=1 />
                                             </p>
+                                            <p v-else class="card-top-text">0</p>
                                             <span class="card-bottom">
                                                 <p class="card-bottom-text hard">Hard</p>
                                             </span>

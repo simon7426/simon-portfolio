@@ -52,18 +52,18 @@ export default {
   z-index: 400;
 
   .wrapper-name {
-    width: 250px;
+    width: 100%;
   }
 
   h1 {
-    font-size: 2.3rem;
+    font-size: 10rem;
     padding: 2px 10px;
     text-align: center;
     text-transform: uppercase;
     color: black;
   }
   h2 {
-    font-size: 1.6rem;
+    font-size: 7rem;
     padding: 2px 10px;
     text-align: center;
     text-transform: uppercase;
@@ -71,14 +71,14 @@ export default {
   }
 
   p {
-    font-size: 1.5rem;
+    font-size: 6rem;
     text-align: center;
     margin: 5px auto;
     color: black;
   }
 
   hr {
-    border: 1px solid whitesmoke;
+    border: 1px solid white;
   }
 }
 
@@ -91,6 +91,10 @@ export default {
       font-size: 2.8rem;
       padding: 4% 8%;
     }
+    h2 {
+      font-size: 2.5rem;
+      padding: 4% 8%;
+    }
     p {
       font-size: 2rem;
     }
@@ -99,10 +103,14 @@ export default {
 @media (min-width: #{map-get($breakpoints, medium)}) {
   .name {
     .wrapper-name {
-      width: 450px;
+      width: 75%;
     }
     h1 {
-      font-size: 4rem;
+      font-size: 8rem;
+      padding: 4% 10%;
+    }
+    h2 {
+      font-size: 5rem;
       padding: 4% 10%;
     }
     p {

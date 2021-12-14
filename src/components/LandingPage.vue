@@ -31,6 +31,7 @@ export default {
 }
 
 .parallax {
+  // background-image: url("../assets/img/bg.jpg");
   background-color: grey;
   background-attachment: fixed;
   background-position: center;

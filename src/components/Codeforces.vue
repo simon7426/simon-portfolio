@@ -15,25 +15,28 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-sm codeforces-box">
-                                            <p class="card-top-text">
+                                            <p v-if="maxRating" class="card-top-text">
                                                 <number ref="maxRatingAnimation" :to="maxRating" :duration=1 />
                                             </p>
+                                            <p v-else class="card-top-text">0</p>
                                             <span class="card-bottom">
                                                 <p class="card-bottom-text">Rating</p>
                                             </span>
                                         </div>
                                         <div class="col-sm codeforces-box">
-                                            <p class="card-top-text">
+                                            <p v-if="solveCnt" class="card-top-text">
                                                 <number ref="solveAnimation" :to="solveCnt" :duration=1 />
                                             </p>
+                                            <p v-else class="card-top-text">0</p>
                                             <span class="card-bottom">
                                                 <p class="card-bottom-text">Solved</p>
                                             </span>
                                         </div>
                                         <div class="col-sm codeforces-box">
-                                            <p class="card-top-text">
+                                            <p v-if="contributions" class="card-top-text">
                                                 <number ref="contributionAnimation" :to="contributions" :duration=1 />
                                             </p>
+                                            <p v-else class="card-top-text">0</p>
                                             <span class="card-bottom">
                                                 <p class="card-bottom-text">
                                                     Contributions
