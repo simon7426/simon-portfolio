@@ -84,9 +84,12 @@ export default {
         this.easySolve = data['Easy']['count']
         this.midSolve = data['Medium']['count']
         this.hardSolve = data['Hard']['count']
-        this.$refs.easySolveAnimation.play();
-        this.$refs.mediumSolveAnimation.play();
-        this.$refs.hardSolveAnimation.play();
+        if(this.easySolve)
+            this.$refs.easySolveAnimation.play();
+        if(this.midSolve)
+            this.$refs.mediumSolveAnimation.play();
+        if(this.hardSolve)
+            this.$refs.hardSolveAnimation.play();
     }
 }
 </script>

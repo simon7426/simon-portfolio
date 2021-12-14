@@ -16,7 +16,7 @@
                                     <div class="row">
                                         <div class="col-sm codeforces-box">
                                             <p v-if="maxRating" class="card-top-text">
-                                                <number ref="maxRatingAnimation" :to="maxRating" :duration=1 />
+                                                <number ref="maxRatingAnimation" :to="maxRating" :duration=1 easing="Back.easeOut"/>
                                             </p>
                                             <p v-else class="card-top-text">0</p>
                                             <span class="card-bottom">
@@ -25,7 +25,7 @@
                                         </div>
                                         <div class="col-sm codeforces-box">
                                             <p v-if="solveCnt" class="card-top-text">
-                                                <number ref="solveAnimation" :to="solveCnt" :duration=1 />
+                                                <number ref="solveAnimation" :to="solveCnt" :duration=1 easing="Back.easeOut"/>
                                             </p>
                                             <p v-else class="card-top-text">0</p>
                                             <span class="card-bottom">
@@ -34,7 +34,7 @@
                                         </div>
                                         <div class="col-sm codeforces-box">
                                             <p v-if="contributions" class="card-top-text">
-                                                <number ref="contributionAnimation" :to="contributions" :duration=1 />
+                                                <number ref="contributionAnimation" :to="contributions" :duration=1 easing="Back.ease"/>
                                             </p>
                                             <p v-else class="card-top-text">0</p>
                                             <span class="card-bottom">
@@ -104,9 +104,12 @@ export default {
         })
         this.solveCnt = this.status.length
         this.status = this.status.slice(0,11)
-        this.$refs.maxRatingAnimation.play();
-        this.$refs.solveAnimation.play();
-        this.$refs.contributionAnimation.play();
+        if(this.maxRating)
+            this.$refs.maxRatingAnimation.play();
+        if(this.solveCnt)
+            this.$refs.solveAnimation.play();
+        if(this.contributions)
+            this.$refs.contributionAnimation.play();
     }
 }
 </script>
