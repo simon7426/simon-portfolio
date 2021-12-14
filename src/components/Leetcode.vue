@@ -73,7 +73,7 @@ export default {
                 'Accept': 'application/json'
             }
         };
-        const info_url = 'http://simonislam.com/api/user?username='+this.handle;
+        const info_url = 'https://simonislam.com/api/user?username='+this.handle;
         
         const resp_info = await axios.get(info_url,config);
         const data = resp_info.data

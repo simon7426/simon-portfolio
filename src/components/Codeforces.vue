@@ -19,7 +19,7 @@
                                                 <number ref="maxRatingAnimation" :to="maxRating" :duration=1 />
                                             </p>
                                             <span class="card-bottom">
-                                                <p class="card-bottom-text">Max Ratings</p>
+                                                <p class="card-bottom-text">Rating</p>
                                             </span>
                                         </div>
                                         <div class="col-sm codeforces-box">
@@ -89,8 +89,9 @@ export default {
         const status_url = 'https://codeforces.com/api/user.status?handle=' + this.handle;
         const resp_info = await axios.get(info_url,config)
         const info = resp_info.data.result[0]
-        this.maxRating = info['maxRating']
-        this.maxRank = info['maxRank']
+        this.maxRating = info['rating']
+        this.maxRank = info['rank']
+        this.contributions = info['contribution']
         const resp_status = await axios.get(status_url, config)
         const status = resp_status.data.result
         this.status = status.filter((x)=> {
