@@ -1,11 +1,11 @@
 <template>
-    <section id="Leetcode">
+    <section id="Lightoj">
         <AnimateOnVisible name="fadeRight" >
-            <div id="leetcode">
+            <div id="lightoj">
                 <div class="card mb-3" style="max-width: 720px;">
                     <div class="row no-gutters">
                         <div class="col-md-4 center">
-                        <a :href="profileLink"><img src="../assets/img/logo/Leetcode.png" class="card-img" alt="Leetcode"></a>
+                        <a :href="profileLink"><img src="../assets/img/logo/lightoj.png" class="card-img" alt="Lightoj"></a>
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
@@ -14,32 +14,32 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-sm codeforces-box">
-                                            <p v-if="easySolve" class="card-top-text">
-                                                <number ref="easySolveAnimation" :to="easySolve" :duration=1 />
+                                            <p v-if="solved" class="card-top-text">
+                                                <number ref="solvedAnimation" :to="solved" :duration=1 />
                                             </p>
                                             <p v-else class="card-top-text">0</p>
                                             <span class="card-bottom">
-                                                <p class="card-bottom-text easy">Easy</p>
+                                                <p class="card-bottom-text">Solved</p>
                                             </span>
                                         </div>
                                         <div class="col-sm codeforces-box">
-                                            <p v-if="midSolve" class="card-top-text">
-                                                <number ref="mediumSolveAnimation" :to="midSolve" :duration=1 />
+                                            <p v-if="submissions" class="card-top-text">
+                                                <number ref="submissionAnimation" :to="submissions" :duration=1 />
                                             </p>
                                             <p v-else class="card-top-text">0</p>
                                             <span class="card-bottom">
-                                                <p class="card-bottom-text medium">Medium</p>
+                                                <p class="card-bottom-text">Submissions</p>
                                             </span>
                                         </div>
-                                        <div class="col-sm codeforces-box">
-                                            <p v-if="hardSolve" class="card-top-text">
-                                                <number ref="hardSolveAnimation" :to="hardSolve" :duration=1 />
+                                        <!-- <div class="col-sm codeforces-box">
+                                            <p v-if="participated" class="card-top-text">
+                                                <number ref="participationAnimation" :to="participated" :duration=1 />
                                             </p>
                                             <p v-else class="card-top-text">0</p>
                                             <span class="card-bottom">
-                                                <p class="card-bottom-text hard">Hard</p>
+                                                <p class="card-bottom-text">Rated Contest</p>
                                             </span>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
@@ -54,17 +54,15 @@
 <script>
 import axios from 'axios';
 export default {
-    name: "Leetcode",
+    name: "Lightoj",
     props: ['handle'],
     components: {
     },
     data() {
         return {
-            totalSolve: 0,
-            easySolve: 0,
-            midSolve: 0,
-            hardSolve: 0,
-            profileLink: "https://leetcode.com/"+this.handle
+            solved: 0,
+            submissions: 0,
+            profileLink: "https://lightoj.com/user/"+this.handle
         }
     },
     methods: {
@@ -76,20 +74,18 @@ export default {
                 'Accept': 'application/json'
             }
         };
-        const info_url = 'https://simonislam.com/api/user/leetcode/'+this.handle;
+        const info_url = 'https://simonislam.com/api/user/lightoj/'+this.handle;
         
         const resp_info = await axios.get(info_url,config);
         const data = resp_info.data
-        this.totalSolve = data['All']['count']
-        this.easySolve = data['Easy']['count']
-        this.midSolve = data['Medium']['count']
-        this.hardSolve = data['Hard']['count']
+        this.solved = data['solved']
+        this.submissions = data['submission']
     }
 }
 </script>
 
 <style scoped>
-#leetcode {
+#lightoj {
     text-align: left;
 }
 .card {

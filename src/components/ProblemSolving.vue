@@ -2,11 +2,13 @@
   <section id="skills" class="light-section">
     <div class="container-fluid">
       <Title class="title" :title="heading" :description="description" />
-      <ul v-for="(site,index) in sites" :key="index">
-        <li>
-          <component :is="site.component" :handle="site.handle" />
-        </li>
-      </ul>
+      <div class="problemSolveFlex">
+        <ul v-for="(site,index) in sites" :key="index" class="problemSolveFlexItem">
+          <li>
+            <component :is="site.component" :handle="site.handle" />
+          </li>
+        </ul>
+      </div>
     </div>
   </section>
 </template>
@@ -16,6 +18,10 @@ import data from "../data/data.json";
 import Codeforces from "../components/Codeforces.vue"
 import Leetcode from "../components/Leetcode.vue"
 import Title from "../components/Title.vue"
+import Atcoder from  "../components/Atcoder.vue"
+import Lightoj from "../components/Lightoj.vue"
+import SPOJ from "../components/SPOJ.vue"
+import Vjudge from "../components/Vjudge.vue"
 
 export default {
   name: "ProblemSolving",
@@ -23,6 +29,10 @@ export default {
   components: {
     Codeforces,
     Leetcode,
+    Atcoder,
+    Lightoj,
+    SPOJ,
+    Vjudge,
     Title
   },
   data() {
@@ -115,5 +125,30 @@ section {
   max-width: 600px; }
   #skills #skill-container .skill-content {
     margin-top: 1rem; }
+
+// .problemSolveFlex {
+//   padding: 0 15rem;
+//   display: flex;
+//   flex-wrap: wrap;
+// }
+// .problemSolveFlexItem {
+//   flex: 50%;
+// }
+
+@media screen and (min-width: 1600px) {
+  .problemSolveFlex {
+    padding: 0 15rem;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .problemSolveFlex {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .problemSolveFlexItem {
+    flex: 50%;
+  }
+}
 
 </style>
