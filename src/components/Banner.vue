@@ -56,14 +56,14 @@ export default {
   }
 
   h1 {
-    font-size: 10rem;
+    font-size: 9rem;
     padding: 2px 10px;
     text-align: center;
     text-transform: uppercase;
     color: black;
   }
   h2 {
-    font-size: 7rem;
+    font-size: 5rem;
     padding: 2px 10px;
     text-align: center;
     text-transform: uppercase;
@@ -88,11 +88,11 @@ export default {
       width: 55%;
     }
     h1 {
-      font-size: 2.8rem;
+      font-size: 3rem;
       padding: 4% 8%;
     }
     h2 {
-      font-size: 2.5rem;
+      font-size: 1.5rem;
       padding: 4% 8%;
     }
     p {
@@ -106,11 +106,11 @@ export default {
       width: 75%;
     }
     h1 {
-      font-size: 8rem;
+      font-size: 6rem;
       padding: 4% 10%;
     }
     h2 {
-      font-size: 5rem;
+      font-size: 4rem;
       padding: 4% 10%;
     }
     p {
