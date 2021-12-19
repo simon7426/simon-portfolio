@@ -9,8 +9,7 @@
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
-                                <h5 class="card-title card-main-title">{{ handle }}</h5>
-                                <h6 class="card-title card-subtitle">{{ maxRank }}</h6>
+                                <h5 class="card-title card-main-title">{{ handle }} (<span class="card-subtitle">{{ maxRank }}</span>)</h5>
                                 <hr />
                                 <div class="container">
                                     <div class="row">
@@ -123,7 +122,7 @@ export default {
     font-weight: 500;
 }
 .card-subtitle {
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: blue;
 }
 

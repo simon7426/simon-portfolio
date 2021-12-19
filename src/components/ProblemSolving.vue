@@ -2,11 +2,13 @@
   <section id="skills" class="light-section">
     <div class="container-fluid">
       <Title class="title" :title="heading" :description="description" />
-      <ul v-for="(site,index) in sites" :key="index">
-        <li>
-          <component :is="site.component" :handle="site.handle" />
-        </li>
-      </ul>
+      <div class="problemSolveFlex">
+        <ul v-for="(site,index) in sites" :key="index" class="problemSolveFlexItem">
+          <li>
+            <component :is="site.component" :handle="site.handle" />
+          </li>
+        </ul>
+      </div>
     </div>
   </section>
 </template>
@@ -123,5 +125,24 @@ section {
   max-width: 600px; }
   #skills #skill-container .skill-content {
     margin-top: 1rem; }
+
+// .problemSolveFlex {
+//   padding: 0 15rem;
+//   display: flex;
+//   flex-wrap: wrap;
+// }
+// .problemSolveFlexItem {
+//   flex: 50%;
+// }
+
+@media screen and (min-width: 1300px) {
+  .problemSolveFlex {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .problemSolveFlexItem {
+    flex: 50%;
+  }
+}
 
 </style>
