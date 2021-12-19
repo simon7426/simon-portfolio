@@ -135,6 +135,12 @@ section {
 //   flex: 50%;
 // }
 
+@media screen and (min-width: 1600px) {
+  .problemSolveFlex {
+    padding: 0 15rem;
+  }
+}
+
 @media screen and (min-width: 1300px) {
   .problemSolveFlex {
     display: flex;
