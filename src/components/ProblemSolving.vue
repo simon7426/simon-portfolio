@@ -16,6 +16,10 @@ import data from "../data/data.json";
 import Codeforces from "../components/Codeforces.vue"
 import Leetcode from "../components/Leetcode.vue"
 import Title from "../components/Title.vue"
+import Atcoder from  "../components/Atcoder.vue"
+import Lightoj from "../components/Lightoj.vue"
+import SPOJ from "../components/SPOJ.vue"
+import Vjudge from "../components/Vjudge.vue"
 
 export default {
   name: "ProblemSolving",
@@ -23,6 +27,10 @@ export default {
   components: {
     Codeforces,
     Leetcode,
+    Atcoder,
+    Lightoj,
+    SPOJ,
+    Vjudge,
     Title
   },
   data() {

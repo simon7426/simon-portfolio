@@ -206,6 +206,26 @@
           "name": "Leetcode",
           "component": "Leetcode",
           "handle": "simon7426"
+        },
+        {
+          "name": "Atcoder",
+          "component": "Atcoder",
+          "handle": "unknowncoder"
+        },
+        {
+          "name": "LightOJ",
+          "component": "Lightoj",
+          "handle": "rian66746"
+        },
+        {
+          "name": "SPOJ",
+          "component": "SPOJ",
+          "handle": "simon7426"
+        },
+        {
+          "name": "Vjudge",
+          "component": "Vjudge",
+          "handle": "rian7426"
         }
       ]
     }

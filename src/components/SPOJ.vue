@@ -1,11 +1,11 @@
 <template>
-    <section id="Leetcode">
+    <section id="SPOJ">
         <AnimateOnVisible name="fadeRight" >
-            <div id="leetcode">
+            <div id="spoj">
                 <div class="card mb-3" style="max-width: 720px;">
                     <div class="row no-gutters">
                         <div class="col-md-4 center">
-                        <a :href="profileLink"><img src="../assets/img/logo/Leetcode.png" class="card-img" alt="Leetcode"></a>
+                        <a :href="profileLink"><img src="../assets/img/logo/spoj.jpeg" class="card-img" alt="SPOJ"></a>
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
@@ -14,30 +14,21 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-sm codeforces-box">
-                                            <p v-if="easySolve" class="card-top-text">
-                                                <number ref="easySolveAnimation" :to="easySolve" :duration=1 />
+                                            <p v-if="solved" class="card-top-text">
+                                                <number ref="solvedAnimation" :to="solved" :duration=1 />
                                             </p>
                                             <p v-else class="card-top-text">0</p>
                                             <span class="card-bottom">
-                                                <p class="card-bottom-text easy">Easy</p>
+                                                <p class="card-bottom-text">Solved</p>
                                             </span>
                                         </div>
                                         <div class="col-sm codeforces-box">
-                                            <p v-if="midSolve" class="card-top-text">
-                                                <number ref="mediumSolveAnimation" :to="midSolve" :duration=1 />
+                                            <p v-if="submissions" class="card-top-text">
+                                                <number ref="submissionAnimation" :to="submissions" :duration=1 />
                                             </p>
                                             <p v-else class="card-top-text">0</p>
                                             <span class="card-bottom">
-                                                <p class="card-bottom-text medium">Medium</p>
-                                            </span>
-                                        </div>
-                                        <div class="col-sm codeforces-box">
-                                            <p v-if="hardSolve" class="card-top-text">
-                                                <number ref="hardSolveAnimation" :to="hardSolve" :duration=1 />
-                                            </p>
-                                            <p v-else class="card-top-text">0</p>
-                                            <span class="card-bottom">
-                                                <p class="card-bottom-text hard">Hard</p>
+                                                <p class="card-bottom-text">Submissions</p>
                                             </span>
                                         </div>
                                     </div>
@@ -54,17 +45,15 @@
 <script>
 import axios from 'axios';
 export default {
-    name: "Leetcode",
+    name: "SPOJ",
     props: ['handle'],
     components: {
     },
     data() {
         return {
-            totalSolve: 0,
-            easySolve: 0,
-            midSolve: 0,
-            hardSolve: 0,
-            profileLink: "https://leetcode.com/"+this.handle
+            solved: 0,
+            submissions: 0,
+            profileLink: "https://spoj.com/users/"+this.handle
         }
     },
     methods: {
@@ -76,26 +65,18 @@ export default {
                 'Accept': 'application/json'
             }
         };
-        const info_url = 'https://simonislam.com/api/user?username='+this.handle;
+        const info_url = 'http://localhost:5000/api/user/spoj/'+this.handle;
         
         const resp_info = await axios.get(info_url,config);
         const data = resp_info.data
-        this.totalSolve = data['All']['count']
-        this.easySolve = data['Easy']['count']
-        this.midSolve = data['Medium']['count']
-        this.hardSolve = data['Hard']['count']
-        // if(this.easySolve)
-        //     this.$refs.easySolveAnimation.play();
-        // if(this.midSolve)
-        //     this.$refs.mediumSolveAnimation.play();
-        // if(this.hardSolve)
-        //     this.$refs.hardSolveAnimation.play();
+        this.solved = data['solved']
+        this.submissions = data['submission']
     }
 }
 </script>
 
 <style scoped>
-#leetcode {
+#spoj {
     text-align: left;
 }
 .card {
