@@ -75,19 +75,13 @@ export default {
                 'Accept': 'application/json'
             }
         };
-        const info_url = 'http://localhost:5000/api/user/atcoder/'+this.handle;
+        const info_url = 'https://simonislam.com/api/user/atcoder/'+this.handle;
         
         const resp_info = await axios.get(info_url,config);
         const data = resp_info.data
         this.currentRating = data['rating']
         this.maxRating = data['max_rating']
         this.participated = data['participated']
-        // if(this.currentRating)
-        //     this.$refs.currentRatingAnimation.play();
-        // if(this.maxRating)
-        //     this.$refs.maxRatingAnimation.play();
-        // if(this.participated)
-        //     this.$refs.participationAnimation.play();
     }
 }
 </script>

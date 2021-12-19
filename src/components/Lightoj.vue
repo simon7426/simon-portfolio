@@ -74,7 +74,7 @@ export default {
                 'Accept': 'application/json'
             }
         };
-        const info_url = 'http://localhost:5000/api/user/lightoj/'+this.handle;
+        const info_url = 'https://simonislam.com/api/user/lightoj/'+this.handle;
         
         const resp_info = await axios.get(info_url,config);
         const data = resp_info.data

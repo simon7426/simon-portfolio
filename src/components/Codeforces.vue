@@ -104,12 +104,6 @@ export default {
         })
         this.solveCnt = this.status.length
         this.status = this.status.slice(0,11)
-        // if(this.maxRating)
-        //     this.$refs.maxRatingAnimation.play();
-        // if(this.solveCnt)
-        //     this.$refs.solveAnimation.play();
-        // if(this.contributions)
-        //     this.$refs.contributionAnimation.play();
     }
 }
 </script>

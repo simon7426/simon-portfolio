@@ -76,7 +76,7 @@ export default {
                 'Accept': 'application/json'
             }
         };
-        const info_url = 'https://simonislam.com/api/user?username='+this.handle;
+        const info_url = 'https://simonislam.com/api/user/leetcode/'+this.handle;
         
         const resp_info = await axios.get(info_url,config);
         const data = resp_info.data
@@ -84,12 +84,6 @@ export default {
         this.easySolve = data['Easy']['count']
         this.midSolve = data['Medium']['count']
         this.hardSolve = data['Hard']['count']
-        // if(this.easySolve)
-        //     this.$refs.easySolveAnimation.play();
-        // if(this.midSolve)
-        //     this.$refs.mediumSolveAnimation.play();
-        // if(this.hardSolve)
-        //     this.$refs.hardSolveAnimation.play();
     }
 }
 </script>
