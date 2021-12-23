@@ -46,7 +46,8 @@ export default {
     getImgUrl(img) {
       if(img == undefined || img == "")
         return ""
-      return require('../assets/img/projects/'+img)
+      // return require('../assets/img/projects/'+img)
+      return 'https://s3.brilliant.com.bd/simon_portfolio'+'/img/projects/'+img;
     },
   },
 };

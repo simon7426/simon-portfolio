@@ -5,7 +5,7 @@
                 <div class="card mb-3" style="max-width: 720px;">
                     <div class="row no-gutters">
                         <div class="col-md-4 center">
-                        <a :href="profileLink"><img src="../assets/img/logo/spoj.jpeg" class="card-img" alt="SPOJ"></a>
+                        <a :href="profileLink"><img src="https://s3.brilliant.com.bd/simon_portfolio/img/logo/spoj.jpeg" class="card-img" alt="SPOJ"></a>
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">

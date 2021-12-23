@@ -23,7 +23,8 @@
         props: ['skills'],
         methods: {
             getImgUrl(img) {
-                return require('../assets/img/logo/'+img);
+                // return require('../assets/img/logo/'+img);
+                return 'https://s3.brilliant.com.bd/simon_portfolio'+'/img/logo/'+img;
             },
         },
     }
