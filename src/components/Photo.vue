@@ -14,7 +14,7 @@ export default {
     props: ['user_image'],
     methods: {
         getImgUrl(img) {
-            return require('../assets/img/'+img);
+            return 'https://s3.brilliant.com.bd/simon_portfolio'+'/img/'+img;
         },
     },
 }

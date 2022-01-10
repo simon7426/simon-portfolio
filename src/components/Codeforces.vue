@@ -5,11 +5,11 @@
                 <div class="card mb-3" style="max-width: 720px;">
                     <div class="row no-gutters">
                         <div class="col-md-4 center">
-                            <a :href="profileLink"><img src="../assets/img/logo/codeforces.png" class="card-img" alt="Codeforces"></a>
+                            <a :href="profileLink"><img src="https://s3.brilliant.com.bd/simon_portfolio/img/logo/codeforces.png" class="card-img" alt="Codeforces"></a>
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
-                                <h5 class="card-title card-main-title">{{ handle }} (<span class="card-subtitle">{{ maxRank }}</span>)</h5>
+                                <h5 class="card-title card-main-title">{{ handle }} (<span class="card-subtitle" v-bind:style="{ color: rankColor }">{{ maxRank }}</span>)</h5>
                                 <hr />
                                 <div class="container">
                                     <div class="row">
@@ -64,45 +64,26 @@ export default {
         return {
             maxRating: 0,
             maxRank: "",
+            rankColor: "",
             solveCnt: 0,
-            status: [],
             profileLink: "https://codeforces.com/profile/"+this.handle,
             contributions: 0,
         }
     },
-    methods: {
-        formatProblem(problem){
-            const contestId = problem.problem.contestId.toString();
-            const index = problem.problem.index;
-            const name = problem.problem.name;
-            const date = problem.creationTimeSeconds;
-            return contestId+index+' '+name+' '+ date;
-        }
-    }
-    ,
     async created() {
         let config = {
             headers: {
                 'Accept': 'application/json'
             }
         }
-
-        const info_url = 'https://codeforces.com/api/user.info?handles=' + this.handle;
-        const status_url = 'https://codeforces.com/api/user.status?handle=' + this.handle;
-        const resp_info = await axios.get(info_url,config)
-        const info = resp_info.data.result[0]
-        this.maxRating = info['rating']
-        this.maxRank = info['rank']
-        this.contributions = info['contribution']
-        const resp_status = await axios.get(status_url, config)
-        const status = resp_status.data.result
-        this.status = status.filter((x)=> {
-            if (x.verdict === 'OK'){
-                return x
-            }
-        })
-        this.solveCnt = this.status.length
-        this.status = this.status.slice(0,11)
+        const codeforces_url = 'http://localhost:8000/api/user/codeforces/' + this.handle;
+        const resp_info = await axios.get(codeforces_url,config)
+        const data = resp_info.data
+        this.maxRating = data['rating']
+        this.maxRank = data['rank']
+        this.rankColor = data['rank_color']
+        this.contributions = data['contribution']
+        this.solveCnt = data['solved']
     }
 }
 </script>
@@ -123,7 +104,6 @@ export default {
 }
 .card-subtitle {
     font-size: 2rem;
-    color: blue;
 }
 
 .card-img{
