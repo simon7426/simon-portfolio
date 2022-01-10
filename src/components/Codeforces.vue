@@ -76,7 +76,7 @@ export default {
                 'Accept': 'application/json'
             }
         }
-        const codeforces_url = 'http://localhost:8000/api/user/codeforces/' + this.handle;
+        const codeforces_url = 'https://simonislam.com/api/user/codeforces/' + this.handle;
         const resp_info = await axios.get(codeforces_url,config)
         const data = resp_info.data
         this.maxRating = data['rating']
