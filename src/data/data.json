@@ -23,8 +23,8 @@
     "image": "user.jpg",
     "summary": {
       "title": "A Brief Info about Myself",
-      "para_1": "I am a full stack developer currently working in Intercloud Ltd., Bangladesh as a software engineer. I have a Bachelor's Degree in Computer Science and Engineering from Chittagond University and Technology. In my university years, I have participated in various competitive programming contests. CS is not only my professional background but also and above all has been a passion for myself.",
-      "para_2": "At Intercloud Ltd., I work as a software engineer in their cloud system department. My work here includes building and integrating various features for their public cloud system. I have been involved in developing their simple storage service and the payment system."
+      "para_1": "I am a full-stack developer. Currently, I'm working in Intercloud Ltd., Bangladesh as a software engineer. I have a Bachelor's Degree in Computer Science and Engineering from Chittagong University of Engineering & Technology. In my university years, I have participated in various competitive programming contests. CS has been my passion since childhood. I feel lucky to be able to pursue my career in this field.",
+      "para_2": "At Intercloud Ltd., I work as a software engineer in their cloud system department. My work here includes building and integrating various features for their public cloud system. I was involved in developing their simple storage service and payment system."
     },
     "contact": {
       "name": "Simon Islam",
@@ -119,7 +119,7 @@
               "img": "flask.png"
             },
             {
-              "name": "Fase API",
+              "name": "FastAPI",
               "img": "fastapi.png"
             },
             {
