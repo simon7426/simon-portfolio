@@ -1,4 +1,4 @@
-FROM node:15-alpine
+FROM node:16.14.2-alpine
 
 RUN npm install -g http-server
 
@@ -14,4 +14,4 @@ RUN npm run build
 
 EXPOSE 8080
 
-CMD [ "http-server", "dist" ]
+CMD [ "http-server", "-b", "-g", "dist" ]
