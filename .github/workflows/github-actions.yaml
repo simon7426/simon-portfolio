@@ -33,5 +33,5 @@ jobs:
         run: |
           git config --global user.name 'Simon Islam'
           git config --global user.email 'mail@simonislam.com'
-          git commit -am "Updated image tag with Github action."
+          git commit -am "Updated image tag with Github action for commit ${{ github.sha }}."
           git push
