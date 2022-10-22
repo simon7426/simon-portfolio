@@ -1,0 +1,37 @@
+name: "Portfolio Depoloy"
+run-name: ${{ github.actor }} is deploying to kubernetes cluster with ArgoCD
+on:
+  push:
+    branches:
+      - main
+jobs:
+  Build-Portfolio-Image:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - run: |
+          echo "Creating Docker image and Pushing it to docker hub"
+      - name: Create docker image & Push it to repository
+        run: ./docker-build.sh ${{ github.sha }} ${{ secrets.DOCKER_USERNAME }} ${{ secrets.DOCKER_TOKEN }}
+  Update-Deployment-Config:
+    runs-on: ubuntu-20.04
+    needs: Build-Portfolio-Image
+    env:
+      GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+    steps:
+      - name: Checkout deployment-config
+        uses: actions/checkout@v2
+        with:
+          repository: 'simon7426/simon-portfolio-config'
+          token: ${{ secrets.ACCESS_TOKEN }}
+      - name: Installing kustomize
+        run: sudo snap install kustomize
+      - name: Run update script
+        run: ./scripts/update-frontend.sh ${{ github.sha }} ${{ secrets.DOCKER_USERNAME }}
+      - name: Push Config to github
+        run: |
+          git config --global user.name 'Simon Islam'
+          git config --global user.email 'mail@simonislam.com'
+          git commit -am "Updated image tag with Github action."
+          git push
