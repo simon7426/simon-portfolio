@@ -20,12 +20,12 @@
   "image": "user.jpg",
   "summary": {
     "title": "A Brief Info about Myself",
-    "para_1": "I am a full-stack developer. Currently, I'm working in Intercloud Ltd., Bangladesh as a software engineer. I have a Bachelor's Degree in Computer Science and Engineering from Chittagong University of Engineering & Technology. In my university years, I have participated in various competitive programming contests. CS has been my passion since childhood. I feel lucky to be able to pursue my career in this field.",
-    "para_2": "At Intercloud Ltd., I work as a software engineer in their cloud system department. My work here includes building and integrating various features for their public cloud system. I was involved in developing their simple storage service and payment system."
+    "para_1": "Full-stack developer with professional experience in Flask and FastAPI. I have a Bachelor's Degree in Computer Science and Engineering from Chittagong University of Engineering & Technology. As a student, I participated in a number of competitive programming competitions. With more than 1 year of Python experience, I am currently working as a software engineer. The cleanliness of my code, problem solving skills, and my ability to work in a team are very important to me.",
+    "para_2": "Currently, I am employed by Intercloud Ltd. as a software engineer in their cloud software department. As part of my work here, I am responsible for building and integrating various features into their public cloud service. Among these are LBaaS, AAaS, and storage plug-ins for Brilliant Connect."
   },
   "contact": {
     "name": "Simon Islam",
-    "email": "simon.islam.rian@gmail.com",
+    "email": "mail@simonislam.com",
     "phone": "+8801991725504",
     "city": "Dhaka",
     "languages": "Bengali, English."
@@ -210,7 +210,7 @@
       },
       {
         "title": "E-commerce Marketplace with Hybrid Recommendation System",
-        "content": "A Hybrid Recommendation System was developed using both collaborative and content-based filtering system. It was then deployed as part of an E-commerce website where a user can create accounts, browse products, buy and sell products. The Recommendation system was developed using Python and the E-commerce website was designed using Python’s Django Framework.<br><br>Github: <a href='https://github.com/simon7426/ecom-project'>https://github.com/simon7426/ecom-project</a>",
+        "content": "Based on collaborative and content-based filtering, a hybrid recommendation system was developed. Afterwards, it was deployed as part of an E-commerce website where users could create accounts, browse products, and buy and sell items. Recommendation system and e-commerce website were developed using Python's Django framework.<br><br>Github: <a href='https://github.com/simon7426/ecom-project'>https://github.com/simon7426/ecom-project</a>",
         "image": "ecom.png",
         "color": "blue",
         "category": "Website",
